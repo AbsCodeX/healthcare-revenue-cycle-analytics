@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Onyvar | Transforming Healthcare Data into Automated Intelligence. Revenue Cycle Analytics • AI Agents • Epic Go-Live Automation • Blockchain in Healthcare.">
+    <meta name="author" content="Abigail Stafford">
+    <title>Onyvar • Healthcare Data Automation &amp; AI</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --primary: #0f766e;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #0f766e, #14b8a6);
+            border-radius: 3px;
+        }
+
+        .nav-link {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: #0f766e;
+            transform: translateY(-1px);
+        }
+
+        .project-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), 
+                       box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .metric {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        .tech-pill {
+            background: #f1e7ff;
+            color: #581c87;
+            font-size: 0.75rem;
+            padding: 0.125rem 0.625rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #134e4b 100%);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "ss02";
+        }
+
+        .subtle-grid {
+            background-image: 
+                linear-gradient(rgba(15, 118, 110, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15, 118, 110, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-teal-800 rounded-2xl flex items-center justify-center shadow-inner">
+                        <span class="text-white text-2xl font-bold tracking-tighter">O</span>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-2xl tracking-tight">Onyvar</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#about" class="nav-link text-slate-600 hover:text-slate-900">About</a>
+                    <a href="#expertise" class="nav-link text-slate-600 hover:text-slate-900">Expertise</a>
+                    <a href="#projects" class="nav-link text-slate-600 hover:text-slate-900">Work</a>
+                    <a href="#insights" class="nav-link text-slate-600 hover:text-slate-900">Insights</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-4">
+                    <a href="https://www.linkedin.com/in/abigail-stafford-2955b5a3" target="_blank"
+                       class="inline-flex items-center gap-x-2 px-5 py-2.5 text-sm font-medium border border-slate-300 rounded-3xl hover:bg-slate-50 transition-colors">
+                        <i class="fa-brands fa-linkedin text-lg"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    
+                    <a href="#contact"
+                       class="inline-flex items-center gap-x-2 bg-teal-800 hover:bg-teal-900 transition-colors text-white text-sm font-semibold px-6 py-2.5 rounded-3xl shadow-sm">
+                        <span>Book a Conversation</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-slate-600 hover:text-slate-900">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white">
+        <div class="max-w-5xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-3xl text-sm mb-6 border border-white/20">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="font-medium tracking-wide">Open to select contract &amp; advisory roles</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl leading-[1.05] tracking-tighter font-semibold mb-6">
+                    Transforming<br>Healthcare Data<br>into <span class="text-teal-300">Automated Intelligence</span>
+                </h1>
+                
+                <p class="max-w-lg text-xl text-white/90 mb-10 leading-relaxed">
+                    Revenue cycle leader and AI automation builder. I turn complex healthcare operations into scalable, 
+                    intelligent systems that deliver measurable financial and operational impact.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#projects" 
+                       class="inline-flex justify-center items-center gap-x-3 bg-white text-slate-900 font-semibold px-8 py-4 rounded-3xl hover:bg-slate-100 transition-all text-base shadow-lg hover:shadow-xl active:scale-[0.985]">
+                        <span>Explore My Work</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <a href="#contact" 
+                       class="inline-flex justify-center items-center gap-x-3 border border-white/40 hover:bg-white/10 transition-colors font-medium px-8 py-4 rounded-3xl text-base">
+                        <span>Start a Conversation</span>
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-x-8 mt-12 text-sm">
+                    <div>
+                        <div class="text-white/60 text-xs tracking-[1.5px] font-medium mb-px">BASED IN</div>
+                        <div class="font-medium">Texas, USA • Remote</div>
+                    </div>
+                    <div class="h-3 w-px bg-white/30"></div>
+                    <div>
+                        <div class="text-white/60 text-xs tracking-[1.5px] font-medium mb-px">OPEN TO</div>
+                        <div class="font-medium">Epic • Revenue Cycle • AI Automation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Bar -->
+    <div class="border-b border-slate-200 bg-white py-5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-sm text-slate-500">
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-check text-emerald-600"></i>
+                    <span class="font-medium">13+ years healthcare revenue cycle</span>
+                </div>
+                <div class="hidden sm:block w-px h-3 bg-slate-300"></div>
+                <div>3 Epic Go-Lives • 8,000+ staff supported</div>
+                <div class="hidden sm:block w-px h-3 bg-slate-300"></div>
+                <div>50%+ manual workflow reductions delivered</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+        <div class="grid md:grid-cols-12 gap-x-12 gap-y-10 items-start">
+            <div class="md:col-span-5">
+                <div class="sticky top-24">
+                    <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-3">THE HUMAN BEHIND THE WORK</div>
+                    <h2 class="text-5xl leading-none tracking-tight font-semibold">Abigail<br>Stafford</h2>
+                    <p class="mt-4 text-lg text-slate-600">Founder, Onyvar</p>
+                    
+                    <div class="mt-8 flex gap-3">
+                        <a href="https://www.linkedin.com/in/abigail-stafford-2955b5a3" target="_blank"
+                           class="flex-1 inline-flex items-center justify-center gap-x-2 border border-slate-300 hover:bg-slate-50 transition-colors py-3 rounded-3xl text-sm font-medium">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#contact"
+                           class="flex-1 inline-flex items-center justify-center gap-x-2 bg-slate-900 text-white py-3 rounded-3xl text-sm font-semibold hover:bg-black transition-colors">
+                            <span>Get in touch</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-7 text-[15px] leading-relaxed text-slate-700 space-y-6">
+                <p class="text-xl text-slate-800">I’m a revenue cycle analytics leader who has spent more than a decade turning complex, disconnected healthcare data into clear, actionable intelligence for directors, VPs, and SVPs.</p>
+                
+                <p>I specialize in building the systems that make healthcare operations run smoother — executive dashboards, automated reporting, Epic go-live readiness tools, and intelligent automation that reduces manual work by 50% or more.</p>
+                
+                <div class="pt-4 border-t border-slate-200">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+                        <div>
+                            <div class="font-mono text-xs tracking-widest text-teal-700 mb-1">CURRENT FOCUS</div>
+                            <div class="font-medium">AI Agents for Revenue Cycle<br>Blockchain-enabled audit trails<br>Scalable automation platforms</div>
+                        </div>
+                        <div>
+                            <div class="font-mono text-xs tracking-widest text-teal-700 mb-1">SIGNATURE WORK</div>
+                            <div class="font-medium">Epic Go-Live Wave Management<br>Automated Training Placement<br>Underpayment Recovery Systems</div>
+                        </div>
+                        <div>
+                            <div class="font-mono text-xs tracking-widest text-teal-700 mb-1">EDUCATION</div>
+                            <div class="font-medium">Yale School of Management<br>Cornell Data Analytics<br>BS Management Information Systems</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise / Services -->
+    <section id="expertise" class="bg-white border-y border-slate-100 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-md mb-12">
+                <div class="uppercase text-teal-700 text-xs tracking-[2px] font-semibold mb-3">WHAT I BUILD</div>
+                <h3 class="text-4xl tracking-tight font-semibold">Expertise that<br>drives results</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="group border border-slate-200 hover:border-teal-200 transition-colors bg-white p-8 rounded-3xl">
+                    <div class="w-11 h-11 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-700 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-chart-line text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-xl tracking-tight mb-3">Revenue Cycle Automation</h4>
+                    <p class="text-slate-600 text-[15px] leading-relaxed">End-to-end automation of KPI reporting, denial management, contract modeling, and underpayment recovery. I design systems that reduce manual work by 50%+ while improving accuracy and stakeholder visibility.</p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="tech-pill">Python + VBA</span>
+                        <span class="tech-pill">Power BI / Excel</span>
+                        <span class="tech-pill">SQL</span>
+                    </div>
+                </div>
+                
+                <div class="group border border-slate-200 hover:border-teal-200 transition-colors bg-white p-8 rounded-3xl">
+                    <div class="w-11 h-11 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-700 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-robot text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-xl tracking-tight mb-3">AI Agents &amp; Intelligent Automation</h4>
+                    <p class="text-slate-600 text-[15px] leading-relaxed">I build production-grade AI agents using LangGraph and modern LLM tooling that can query data, surface insights, recommend actions, and integrate into existing workflows — from denial analysis to contract review.</p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="tech-pill">LangGraph</span>
+                        <span class="tech-pill">Anthropic / OpenAI</span>
+                        <span class="tech-pill">Streamlit</span>
+                    </div>
+                </div>
+                
+                <div class="group border border-slate-200 hover:border-teal-200 transition-colors bg-white p-8 rounded-3xl">
+                    <div class="w-11 h-11 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-700 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-hospital-user text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-xl tracking-tight mb-3">Epic Go-Live &amp; Readiness</h4>
+                    <p class="text-slate-600 text-[15px] leading-relaxed">I’ve supported three major Epic go-lives, building the reporting, wave management, training logic, and real-time dashboards that keep leadership aligned and teams on track through complex transitions.</p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="tech-pill">Epic Resolute</span>
+                        <span class="tech-pill">Wave Management</span>
+                        <span class="tech-pill">Training Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Work -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="flex items-end justify-between mb-10">
+            <div>
+                <div class="uppercase tracking-[2px] text-xs font-semibold text-teal-700 mb-2">SELECTED WORK</div>
+                <h3 class="text-4xl tracking-tight font-semibold">Featured Projects &amp; Builds</h3>
+            </div>
+            <a href="https://github.com/onyvar" target="_blank" 
+               class="hidden md:inline-flex items-center gap-x-2 text-sm font-medium text-teal-700 hover:text-teal-800">
+                View all on GitHub <i class="fa-brands fa-github ml-1"></i>
+            </a>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            
+            <!-- Project 1: Revenue Cycle Platform -->
+            <div class="project-card group border border-slate-200 bg-white rounded-3xl overflow-hidden flex flex-col">
+                <div class="h-2 bg-gradient-to-r from-teal-700 to-teal-500"></div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="font-mono text-[10px] tracking-[1.5px] text-teal-600 font-medium">FLAGHSHIP • 2026</div>
+                            <h4 class="text-2xl font-semibold tracking-tight mt-1">Onyvar Revenue Cycle<br>Intelligence Platform</h4>
+                        </div>
+                        <div class="text-right">
+                            <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-2xl">LIVE</div>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-5 text-[15px] text-slate-600 flex-1">Interactive platform that turns synthetic claims, denial, and training data into executive-ready dashboards and AI-powered insights. Includes automated class placement logic and natural language querying.</p>
+                    
+                    <div class="mt-auto pt-6">
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Streamlit</span>
+                            <span class="tech-pill">LangGraph</span>
+                            <span class="tech-pill">Synthea</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-x-3">
+                            <a href="#" class="flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-slate-300 hover:bg-slate-50 py-3 rounded-3xl transition-colors">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold bg-teal-800 text-white py-3 rounded-3xl hover:bg-teal-900 transition-colors">
+                                <span>Live Demo</span>
+                                <i class="fa-solid fa-external-link-alt text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2: Epic Go-Live Toolkit -->
+            <div class="project-card group border border-slate-200 bg-white rounded-3xl overflow-hidden flex flex-col">
+                <div class="h-2 bg-gradient-to-r from-violet-600 to-fuchsia-500"></div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div>
+                        <div class="font-mono text-[10px] tracking-[1.5px] text-violet-600 font-medium">EPIC • GO-LIVE</div>
+                        <h4 class="text-2xl font-semibold tracking-tight mt-1">Epic Go-Live<br>Readiness Toolkit</h4>
+                    </div>
+                    
+                    <p class="mt-5 text-[15px] text-slate-600 flex-1">Wave management simulator, automated training assignment engine, real-time no-show and registration dashboards, and change request tracking — built from real go-live experience supporting 8,000+ team members.</p>
+                    
+                    <div class="mt-auto pt-6">
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Streamlit</span>
+                            <span class="tech-pill">Excel Automation</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-x-3">
+                            <a href="#" class="flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-slate-300 hover:bg-slate-50 py-3 rounded-3xl transition-colors">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold bg-violet-700 text-white py-3 rounded-3xl hover:bg-violet-800 transition-colors">
+                                <span>View Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3: AI Agents -->
+            <div class="project-card group border border-slate-200 bg-white rounded-3xl overflow-hidden flex flex-col">
+                <div class="h-2 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div>
+                        <div class="font-mono text-[10px] tracking-[1.5px] text-amber-600 font-medium">AI AGENTS</div>
+                        <h4 class="text-2xl font-semibold tracking-tight mt-1">Healthcare AI Agent Suite</h4>
+                    </div>
+                    
+                    <p class="mt-5 text-[15px] text-slate-600 flex-1">Production-style agents for denial root-cause analysis, contract term extraction, KPI natural language queries, and automated recommendation engines. Built with LangGraph and designed for easy integration into existing workflows.</p>
+                    
+                    <div class="mt-auto pt-6">
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-pill">LangGraph</span>
+                            <span class="tech-pill">Anthropic</span>
+                            <span class="tech-pill">Python</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-x-3">
+                            <a href="#" class="flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-slate-300 hover:bg-slate-50 py-3 rounded-3xl transition-colors">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold bg-amber-600 text-white py-3 rounded-3xl hover:bg-amber-700 transition-colors">
+                                <span>Explore Agents</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 4: Blockchain -->
+            <div class="project-card group border border-slate-200 bg-white rounded-3xl overflow-hidden flex flex-col">
+                <div class="h-2 bg-gradient-to-r from-sky-600 to-indigo-600"></div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div>
+                        <div class="font-mono text-[10px] tracking-[1.5px] text-sky-600 font-medium">EXPLORATION • 2026</div>
+                        <h4 class="text-2xl font-semibold tracking-tight mt-1">Healthcare Blockchain<br>Ledger &amp; Audit Demo</h4>
+                    </div>
+                    
+                    <p class="mt-5 text-[15px] text-slate-600 flex-1">Lightweight demonstration of immutable claims and denial records, smart contract-based adjudication simulation, and patient consent audit trails using permissioned blockchain patterns and off-chain storage.</p>
+                    
+                    <div class="mt-auto pt-6">
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-pill">Hyperledger Fabric</span>
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">IPFS</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-x-3">
+                            <a href="#" class="flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-slate-300 hover:bg-slate-50 py-3 rounded-3xl transition-colors">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold bg-sky-700 text-white py-3 rounded-3xl hover:bg-sky-800 transition-colors">
+                                <span>View Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="text-center mt-10">
+            <a href="https://github.com/onyvar" target="_blank"
+               class="inline-flex items-center gap-x-2 text-sm font-medium text-teal-700 hover:text-teal-800">
+                See the full open-source portfolio on GitHub →
+            </a>
+        </div>
+    </section>
+
+    <!-- Impact / Metrics -->
+    <section class="bg-slate-900 text-white py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 text-center">
+                <div>
+                    <div class="text-6xl font-semibold tracking-tighter stat-number">50%+</div>
+                    <div class="mt-1 text-sm text-white/70 tracking-wide">Reduction in manual workflows</div>
+                </div>
+                <div>
+                    <div class="text-6xl font-semibold tracking-tighter stat-number">3</div>
+                    <div class="mt-1 text-sm text-white/70 tracking-wide">Major Epic Go-Lives supported</div>
+                </div>
+                <div>
+                    <div class="text-6xl font-semibold tracking-tighter stat-number">8,000+</div>
+                    <div class="mt-1 text-sm text-white/70 tracking-wide">Staff supported across waves</div>
+                </div>
+                <div>
+                    <div class="text-6xl font-semibold tracking-tighter stat-number">13+</div>
+                    <div class="mt-1 text-sm text-white/70 tracking-wide">Years in revenue cycle</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights -->
+    <section id="insights" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="mb-10">
+            <div class="uppercase text-xs tracking-[2px] font-semibold text-teal-700 mb-2">THOUGHT LEADERSHIP</div>
+            <h3 class="text-4xl tracking-tight font-semibold">Recent Insights &amp; Writing</h3>
+        </div>
+        
+        <div class="space-y-4">
+            <a href="#" class="group flex items-start justify-between gap-x-8 border-b border-slate-200 pb-6 hover:border-teal-200 transition-colors">
+                <div class="flex-1">
+                    <div class="font-medium text-lg group-hover:text-teal-700 transition-colors">From Manual Workflows to Intelligent Agents: The Next Era of Revenue Cycle</div>
+                    <div class="text-sm text-slate-500 mt-1">How LangGraph agents are transforming denial management and contract analysis</div>
+                </div>
+                <div class="text-xs text-slate-400 whitespace-nowrap pt-1">Jan 2026</div>
+            </a>
+            
+            <a href="#" class="group flex items-start justify-between gap-x-8 border-b border-slate-200 pb-6 hover:border-teal-200 transition-colors">
+                <div class="flex-1">
+                    <div class="font-medium text-lg group-hover:text-teal-700 transition-colors">Building the Master Wave File: Lessons from Three Epic Go-Lives</div>
+                    <div class="text-sm text-slate-500 mt-1">Practical patterns for governance, change control, and real-time reporting</div>
+                </div>
+                <div class="text-xs text-slate-400 whitespace-nowrap pt-1">Dec 2025</div>
+            </a>
+            
+            <a href="#" class="group flex items-start justify-between gap-x-8 border-b border-slate-200 pb-6 hover:border-teal-200 transition-colors">
+                <div class="flex-1">
+                    <div class="font-medium text-lg group-hover:text-teal-700 transition-colors">Why Blockchain Belongs in the Revenue Cycle Conversation</div>
+                    <div class="text-sm text-slate-500 mt-1">Immutable audit trails, smart contracts, and the future of claims transparency</div>
+                </div>
+                <div class="text-xs text-slate-400 whitespace-nowrap pt-1">Nov 2025</div>
+            </a>
+        </div>
+        
+        <div class="mt-8 text-sm">
+            <a href="#" class="inline-flex items-center text-teal-700 font-medium">Read all insights on the Onyvar blog →</a>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="bg-white border-t border-slate-100 py-20">
+        <div class="max-w-xl mx-auto px-6 text-center">
+            <div class="mx-auto mb-6 w-16 h-16 bg-teal-100 rounded-3xl flex items-center justify-center">
+                <i class="fa-solid fa-comments text-4xl text-teal-700"></i>
+            </div>
+            
+            <h3 class="text-4xl tracking-tight font-semibold">Let’s build something<br>that moves the needle.</h3>
+            <p class="mt-4 text-lg text-slate-600 max-w-md mx-auto">I’m currently taking on select contract and advisory work in revenue cycle automation, Epic go-live support, and AI agent development.</p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:abigail@onyvar.com" 
+                   class="inline-flex items-center justify-center gap-x-3 px-9 py-4 bg-teal-800 hover:bg-teal-900 text-white font-semibold rounded-3xl transition-colors">
+                    <span>Email me directly</span>
+                </a>
+                
+                <a href="https://cal.com/onyvar" target="_blank"
+                   class="inline-flex items-center justify-center gap-x-3 px-9 py-4 border border-slate-300 hover:bg-slate-50 font-medium rounded-3xl transition-colors">
+                    <span>Book a 30-min call</span>
+                </a>
+            </div>
+            
+            <div class="mt-8 text-xs text-slate-500">
+                Or connect on <a href="https://www.linkedin.com/in/abigail-stafford-2955b5a3" class="underline hover:text-slate-700">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-100 py-8 text-center text-xs text-slate-400">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-y-3">
+            <div>© 2026 Onyvar. All rights reserved.</div>
+            <div class="flex gap-x-5">
+                <a href="#" class="hover:text-slate-600">Privacy</a>
+                <a href="#" class="hover:text-slate-600">Legal</a>
+                <a href="https://github.com/onyvar" class="hover:text-slate-600">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black/60 z-[60]">
+        <div class="bg-white w-4/5 max-w-xs h-full p-8">
+            <div class="flex justify-between items-center mb-10">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-8 h-8 bg-teal-800 rounded-2xl flex items-center justify-center">
+                        <span class="text-white font-bold">O</span>
+                    </div>
+                    <span class="font-semibold text-xl">Onyvar</span>
+                </div>
+                <button id="close-mobile-menu" class="text-2xl text-slate-400">&times;</button>
+            </div>
+            
+            <div class="flex flex-col text-lg font-medium space-y-5">
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#expertise" class="mobile-nav-link">Expertise</a>
+                <a href="#projects" class="mobile-nav-link">Work</a>
+                <a href="#insights" class="mobile-nav-link">Insights</a>
+            </div>
+            
+            <div class="mt-auto pt-12 border-t mt-12">
+                <a href="#contact" class="block w-full text-center bg-teal-800 text-white font-semibold py-3.5 rounded-3xl">Book a Conversation</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#0f766e');
+        }
+        
+        // Mobile menu
+        function setupMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const closeBtn = document.getElementById('close-mobile-menu');
+            
+            if (!btn || !menu) return;
+            
+            btn.addEventListener('click', () => {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+            });
+            
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                });
+            }
+            
+            // Close when clicking links
+            menu.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                });
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        function setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        const navHeight = 80;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.scrollY - navHeight;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Simple intersection observer for subtle animations
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.style.opacity = '0.95';
+                card.style.transform = 'translateY(10px)';
+                card.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(card);
+            });
+        }
+        
+        // Keyboard accessibility for mobile menu
+        function setupKeyboardNav() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    const menu = document.getElementById('mobile-menu');
+                    if (menu && !menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                        menu.classList.remove('flex');
+                    }
+                }
+            });
+        }
+        
+        // Initialize everything
+        function init() {
+            initializeTailwind();
+            setupMobileMenu();
+            setupSmoothScroll();
+            setupScrollAnimations();
+            setupKeyboardNav();
+            
+            // Easter egg: Konami code or just console message
+            console.log('%c[Onyvar] Portfolio initialized. Built with care for healthcare data professionals.', 'color:#64748b; font-size:9px');
+        }
+        
+        window.onload = init;
+    </script>
+</body>
+</html>
